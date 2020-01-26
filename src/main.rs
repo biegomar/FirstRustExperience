@@ -111,8 +111,12 @@ fn using_struct() {
 
 fn using_struct_deconstruct() {
     let white = Color(255, 255, 255);
-
     let Color(r, g, b) = white;
+
+    println!("Rot: {}, Grün: {}, Blau: {}", r, g, b);
+
+    let orange = Color(255, 165, 0);
+    let Color(r, _, b) = orange;
 
     println!("Rot: {}, Grün: {}, Blau: {}", r, g, b);
 }
