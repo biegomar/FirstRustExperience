@@ -14,6 +14,9 @@ fn main() {
 
     println!("{}", if_expression("Test"));
     println!("{}", if_expression("Hallo Welt!"));
+
+    loop_for_range();
+    loop_for_range_inclusive_right_border();
 }
 
 fn greetings() {
@@ -52,4 +55,16 @@ fn if_expression(value: &str) -> &str {
     };
 
     result
+}
+
+fn loop_for_range() {
+    for counter in 1..5 {
+        println!("Wir sind bei Nummer {}", counter);
+    }
+}
+
+fn loop_for_range_inclusive_right_border() {
+    for counter in 1..=5 {
+        println!("Wir sind bei Nummer {}", counter);
+    }
 }
