@@ -2,6 +2,12 @@ use std::env;
 
 struct Color(u8, u8, u8);
 
+struct Person {
+    vorname: String,
+    nachname: String,
+    alter: u8,
+}
+
 fn main() {
     greetings();
 
@@ -26,6 +32,8 @@ fn main() {
 
     using_struct();
     using_struct_deconstruct();
+
+    c_style_struct();
 }
 
 fn greetings() {
@@ -119,4 +127,14 @@ fn using_struct_deconstruct() {
     let Color(r, _, b) = orange;
 
     println!("Rot: {}, Grün: {}, Blau: {}", r, g, b);
+}
+
+fn c_style_struct() {
+    let person = Person {
+        vorname: "Marc".to_string(),
+        nachname: "Biegota".to_string(),
+        alter: 47,
+    };
+
+    println!("Nachname: {}", person.nachname);
 }
