@@ -17,6 +17,8 @@ fn main() {
 
     loop_for_range();
     loop_for_range_inclusive_right_border();
+
+    while_with_mutable();
 }
 
 fn greetings() {
@@ -66,5 +68,14 @@ fn loop_for_range() {
 fn loop_for_range_inclusive_right_border() {
     for counter in 1..=5 {
         println!("Wir sind bei Nummer {}", counter);
+    }
+}
+
+fn while_with_mutable() {
+    let mut counter = 5;
+
+    while counter >= 0 {
+        println!("Countdown: {}", counter);
+        counter -= 1;
     }
 }
