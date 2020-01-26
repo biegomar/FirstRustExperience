@@ -8,6 +8,12 @@ fn main() {
         "Summe von 10 und 21 ist auch hier {}.",
         add_with_closure(10, 21)
     );
+
+    if_statement("Test");
+    if_statement("Hallo Welt!");
+
+    println!("{}", if_expression("Test"));
+    println!("{}", if_expression("Hallo Welt!"));
 }
 
 fn greetings() {
@@ -28,4 +34,22 @@ fn add_with_closure(summand_a: i32, summand_b: i32) -> i32 {
     let addy_closure = |a: i32, b: i32| -> i32 { a + b };
 
     addy_closure(summand_a, summand_b)
+}
+
+fn if_statement(value: &str) {
+    if value == "Test" {
+        println!("Dies ist ein Test");
+    } else {
+        println!("{}", value);
+    }
+}
+
+fn if_expression(value: &str) -> &str {
+    let result = if value == "Test" {
+        "Dies ist ein Test"
+    } else {
+        value
+    };
+
+    result
 }
