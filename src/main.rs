@@ -1,5 +1,7 @@
 use std::env;
 
+struct Color(u8, u8, u8);
+
 fn main() {
     greetings();
 
@@ -21,6 +23,8 @@ fn main() {
     while_with_mutable();
 
     loop_loop_mutable();
+
+    using_struct();
 }
 
 fn greetings() {
@@ -92,4 +96,14 @@ fn loop_loop_mutable() {
         println!("Countdown with loop: {}", counter);
         counter -= 1;
     }
+}
+
+fn using_struct() {
+    let white = Color(255, 255, 255);
+
+    let red = white.0;
+    let green = white.1;
+    let blue = white.2;
+
+    println!("Rot: {}, Grün: {}, Blau: {}", red, green, blue);
 }
