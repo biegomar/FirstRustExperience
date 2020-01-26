@@ -25,6 +25,7 @@ fn main() {
     loop_loop_mutable();
 
     using_struct();
+    using_struct_deconstruct();
 }
 
 fn greetings() {
@@ -106,4 +107,12 @@ fn using_struct() {
     let blue = white.2;
 
     println!("Rot: {}, Grün: {}, Blau: {}", red, green, blue);
+}
+
+fn using_struct_deconstruct() {
+    let white = Color(255, 255, 255);
+
+    let Color(r, g, b) = white;
+
+    println!("Rot: {}, Grün: {}, Blau: {}", r, g, b);
 }
