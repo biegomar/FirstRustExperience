@@ -168,4 +168,7 @@ fn use_struct_implementation() {
 
     person.print_diplay_name();
     println!("{}", person.get_display_name());
+
+    let display_name = Person::get_display_name(&person);
+    println!("{}", display_name);
 }
