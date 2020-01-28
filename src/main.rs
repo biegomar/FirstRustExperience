@@ -28,6 +28,7 @@ fn main() {
     using_struct_deconstruct();
 
     c_style_struct();
+    use_struct_implementation();
 }
 
 fn greetings() {
@@ -129,6 +130,22 @@ struct Person {
     alter: u8,
 }
 
+impl Person {
+    fn print_diplay_name(&self) {
+        println!(
+            "Person: {} {}, {} Jahre.",
+            self.vorname, self.nachname, self.alter
+        );
+    }
+
+    fn get_display_name(&self) -> String {
+        format!(
+            "Person: {} {}, {} Jahre.",
+            self.vorname, self.nachname, self.alter
+        )
+    }
+}
+
 fn c_style_struct() {
     let person = Person {
         vorname: "Marc".to_string(),
@@ -140,4 +157,15 @@ fn c_style_struct() {
         "Person: {} {}, {} Jahre.",
         person.vorname, person.nachname, person.alter
     );
+}
+
+fn use_struct_implementation() {
+    let person = Person {
+        vorname: "Marc".to_string(),
+        nachname: "Biegota".to_string(),
+        alter: 47,
+    };
+
+    person.print_diplay_name();
+    println!("{}", person.get_display_name());
 }
