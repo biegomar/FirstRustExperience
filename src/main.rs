@@ -34,6 +34,7 @@ fn main() {
     use_struct_implementation();
 
     use_customer_from_module();
+    use_struct_implementation_from_module();
 }
 
 fn greetings() {
@@ -187,4 +188,14 @@ fn use_customer_from_module() {
     };
 
     println!("Kunde: {}", cust.name);
+}
+
+fn use_struct_implementation_from_module() {
+    let person = Person {
+        vorname: "Marc".to_string(),
+        nachname: "Biegota".to_string(),
+        alter: 47,
+    };
+
+    person.print_only_name();
 }
