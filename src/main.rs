@@ -1,3 +1,6 @@
+mod customer;
+
+use customer::Customers;
 use std::env;
 
 struct Color(u8, u8, u8);
@@ -29,6 +32,8 @@ fn main() {
 
     c_style_struct();
     use_struct_implementation();
+
+    use_customer_from_module();
 }
 
 fn greetings() {
@@ -171,4 +176,15 @@ fn use_struct_implementation() {
 
     let display_name = Person::get_display_name(&person);
     println!("{}", display_name);
+}
+
+fn use_customer_from_module() {
+    let cust = Customers {
+        name: "Kunde".to_string(),
+        strasse: "Testweg 12".to_string(),
+        plz: "58300".to_string(),
+        ort: "Wetter".to_string(),
+    };
+
+    println!("Kunde: {}", cust.name);
 }
