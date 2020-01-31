@@ -1,6 +1,7 @@
 mod customer;
 
 use customer::Customers;
+use std::collections::HashMap;
 use std::env;
 
 struct Color(u8, u8, u8);
@@ -39,6 +40,8 @@ fn main() {
     array();
     tuples();
     tuples_deconstruct();
+    vectors();
+    hashmap();
 }
 
 fn greetings() {
@@ -220,4 +223,24 @@ fn tuples_deconstruct() {
     let num_and_str: (u8, &str) = (20, "Toll");
     let (num, string) = num_and_str;
     println!("{}", string);
+}
+
+fn vectors() {
+    let mut numbers_vec: Vec<u8> = Vec::new();
+    numbers_vec.push(10);
+    numbers_vec.push(2);
+
+    println!("{}", numbers_vec[0]);
+}
+
+fn hashmap() {
+    let mut shopping_cart = HashMap::new();
+    shopping_cart.insert("iPhone X", 1);
+    shopping_cart.insert("power cord", 1);
+    shopping_cart.insert("Schutzhülle", 2);
+    println!("Warenkorb");
+
+    for (k, v) in shopping_cart {
+        println!("{}x {}", v, k);
+    }
 }
