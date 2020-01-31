@@ -35,6 +35,8 @@ fn main() {
 
     use_customer_from_module();
     use_struct_implementation_from_module();
+
+    array();
 }
 
 fn greetings() {
@@ -198,4 +200,10 @@ fn use_struct_implementation_from_module() {
     };
 
     person.print_only_name();
+}
+
+fn array() {
+    let numbers: [u8; 10] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    println!("Nummer: {}", numbers[6]);
 }
