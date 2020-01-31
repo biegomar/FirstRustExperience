@@ -37,6 +37,8 @@ fn main() {
     use_struct_implementation_from_module();
 
     array();
+    tuples();
+    tuples_deconstruct();
 }
 
 fn greetings() {
@@ -206,4 +208,16 @@ fn array() {
     let numbers: [u8; 10] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     println!("Nummer: {}", numbers[6]);
+}
+
+fn tuples() {
+    let num_and_str: (u8, &str) = (20, "Toll");
+    println!("{:?}", num_and_str);
+    println!("{}", num_and_str.0);
+}
+
+fn tuples_deconstruct() {
+    let num_and_str: (u8, &str) = (20, "Toll");
+    let (num, string) = num_and_str;
+    println!("{}", string);
 }
