@@ -1,7 +1,7 @@
+mod collection;
 mod customer;
 
 use customer::Customers;
-use std::collections::HashMap;
 use std::env;
 
 struct Color(u8, u8, u8);
@@ -37,11 +37,16 @@ fn main() {
     use_customer_from_module();
     use_struct_implementation_from_module();
 
-    array();
-    tuples();
-    tuples_deconstruct();
-    vectors();
-    hashmap();
+    let collections = collection::Collections {};
+    collections.array();
+    let collections = collection::Collections {};
+    collections.tuples();
+    let collections = collection::Collections {};
+    collections.tuples_deconstruct();
+    let collections = collection::Collections {};
+    collections.vectors();
+    let collections = collection::Collections {};
+    collections.hashmap();
 }
 
 fn greetings() {
@@ -205,42 +210,4 @@ fn use_struct_implementation_from_module() {
     };
 
     person.print_only_name();
-}
-
-fn array() {
-    let numbers: [u8; 10] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-    println!("Nummer: {}", numbers[6]);
-}
-
-fn tuples() {
-    let num_and_str: (u8, &str) = (20, "Toll");
-    println!("{:?}", num_and_str);
-    println!("{}", num_and_str.0);
-}
-
-fn tuples_deconstruct() {
-    let num_and_str: (u8, &str) = (20, "Toll");
-    let (num, string) = num_and_str;
-    println!("{}", string);
-}
-
-fn vectors() {
-    let mut numbers_vec: Vec<u8> = Vec::new();
-    numbers_vec.push(10);
-    numbers_vec.push(2);
-
-    println!("{}", numbers_vec[0]);
-}
-
-fn hashmap() {
-    let mut shopping_cart = HashMap::new();
-    shopping_cart.insert("iPhone X", 1);
-    shopping_cart.insert("power cord", 1);
-    shopping_cart.insert("Schutzhülle", 2);
-    println!("Warenkorb");
-
-    for (k, v) in shopping_cart {
-        println!("{}x {}", v, k);
-    }
 }
