@@ -1,7 +1,9 @@
 mod collection;
 mod customer;
 
+use collection::Collections;
 use customer::Customers;
+
 use std::env;
 
 struct Color(u8, u8, u8);
@@ -37,15 +39,15 @@ fn main() {
     use_customer_from_module();
     use_struct_implementation_from_module();
 
-    let collections = collection::Collections {};
+    let collections = Collections {};
     collections.array();
-    let collections = collection::Collections {};
+    let collections = Collections {};
     collections.tuples();
-    let collections = collection::Collections {};
+    let collections = Collections {};
     collections.tuples_deconstruct();
-    let collections = collection::Collections {};
+    let collections = Collections {};
     collections.vectors();
-    let collections = collection::Collections {};
+    let collections = Collections {};
     collections.hashmap();
 }
 

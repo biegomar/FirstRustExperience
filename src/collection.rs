@@ -17,7 +17,7 @@ impl Collections {
 
     pub fn tuples_deconstruct(self: Collections) {
         let num_and_str: (u8, &str) = (20, "Toll");
-        let (num, string) = num_and_str;
+        let (_, string) = num_and_str;
         println!("{}", string);
     }
 
