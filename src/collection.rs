@@ -3,25 +3,25 @@ use std::collections::HashMap;
 pub struct Collections {}
 
 impl Collections {
-    pub fn array(self: Collections) {
+    pub fn array(&self) {
         let numbers: [u8; 10] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
         println!("Nummer: {}", numbers[6]);
     }
 
-    pub fn tuples(self: Collections) {
+    pub fn tuples(&self) {
         let num_and_str: (u8, &str) = (20, "Toll");
         println!("{:?}", num_and_str);
         println!("{}", num_and_str.0);
     }
 
-    pub fn tuples_deconstruct(self: Collections) {
+    pub fn tuples_deconstruct(&self) {
         let num_and_str: (u8, &str) = (20, "Toll");
         let (_, string) = num_and_str;
         println!("{}", string);
     }
 
-    pub fn vectors(self: Collections) {
+    pub fn vectors(&self) {
         let mut numbers_vec: Vec<u8> = Vec::new();
         numbers_vec.push(10);
         numbers_vec.push(2);
@@ -29,7 +29,7 @@ impl Collections {
         println!("{}", numbers_vec[0]);
     }
 
-    pub fn hashmap(self: Collections) {
+    pub fn hashmap(&self) {
         let mut shopping_cart = HashMap::new();
         shopping_cart.insert("iPhone X", 1);
         shopping_cart.insert("power cord", 1);

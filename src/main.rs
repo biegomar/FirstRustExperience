@@ -41,13 +41,9 @@ fn main() {
 
     let collections = Collections {};
     collections.array();
-    let collections = Collections {};
     collections.tuples();
-    let collections = Collections {};
     collections.tuples_deconstruct();
-    let collections = Collections {};
     collections.vectors();
-    let collections = Collections {};
     collections.hashmap();
 }
 
