@@ -1,8 +1,10 @@
 mod collection;
 mod customer;
+mod person;
 
 use collection::Collections;
 use customer::Customers;
+use person::Person;
 
 use std::env;
 
@@ -138,28 +140,6 @@ fn using_struct_deconstruct() {
     let Color(r, _, b) = orange;
 
     println!("Rot: {}, Grün: {}, Blau: {}", r, g, b);
-}
-
-struct Person {
-    vorname: String,
-    nachname: String,
-    alter: u8,
-}
-
-impl Person {
-    fn print_diplay_name(&self) {
-        println!(
-            "Person: {} {}, {} Jahre.",
-            self.vorname, self.nachname, self.alter
-        );
-    }
-
-    fn get_display_name(&self) -> String {
-        format!(
-            "Person: {} {}, {} Jahre.",
-            self.vorname, self.nachname, self.alter
-        )
-    }
 }
 
 fn c_style_struct() {
