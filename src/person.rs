@@ -1,3 +1,5 @@
+use crate::behaviour::SalesDiscount;
+
 pub struct Person {
     pub vorname: String,
     pub nachname: String,
@@ -21,5 +23,11 @@ impl Person {
 
     pub fn print_only_name(&self) {
         println!("Person: {} {}.", self.vorname, self.nachname);
+    }
+}
+
+impl SalesDiscount for Person {
+    fn discount(&self) -> u8 {
+        5
     }
 }

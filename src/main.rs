@@ -1,7 +1,9 @@
+mod behaviour;
 mod collection;
 mod customer;
 mod person;
 
+use behaviour::SalesDiscount;
 use collection::Collections;
 use customer::Customers;
 use person::Person;
@@ -47,6 +49,9 @@ fn main() {
     collections.tuples_deconstruct();
     collections.vectors();
     collections.hashmap();
+
+    use_trait_implementation();
+    use_trait_implementation_customer();
 }
 
 fn greetings() {
@@ -188,4 +193,25 @@ fn use_struct_implementation_from_module() {
     };
 
     person.print_only_name();
+}
+
+fn use_trait_implementation() {
+    let person = Person {
+        vorname: "Marc".to_string(),
+        nachname: "Biegota".to_string(),
+        alter: 47,
+    };
+
+    println!("Discount Person: {}", person.discount());
+}
+
+fn use_trait_implementation_customer() {
+    let cust = Customers {
+        name: "Kunde".to_string(),
+        strasse: "Testweg 12".to_string(),
+        plz: "58300".to_string(),
+        ort: "Wetter".to_string(),
+    };
+
+    println!("Discount Kundex: {}", cust.discount());
 }
