@@ -27,6 +27,8 @@ fn main() {
     println!("{}", if_expression("Test"));
     println!("{}", if_expression("Hallo Welt!"));
 
+    println!("{}", if 1 == 1 { "IF-Expression!" } else { "Hallo" });
+
     loop_for_range();
     loop_for_range_inclusive_right_border();
 
