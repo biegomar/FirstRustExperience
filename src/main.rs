@@ -54,6 +54,14 @@ fn main() {
 
     use_trait_implementation();
     use_trait_implementation_customer();
+
+    copy_semantic();
+
+    println!("{}", concat(String::from("Marc"), String::from("Biegota")));
+    println!(
+        "{}",
+        concat_alt(String::from("Marc"), String::from("Biegota"))
+    );
 }
 
 fn greetings() {
@@ -216,4 +224,22 @@ fn use_trait_implementation_customer() {
     };
 
     println!("Discount Kundex: {}", cust.discount());
+}
+
+fn copy_semantic() {
+    let val = 100;
+    copy_semantic_function(val);
+    println!("Kein move, sondern copy {}", val);
+}
+
+fn copy_semantic_function(value: i8) {
+    println!("Copy semantic {}", value);
+}
+
+fn concat(part1: String, part2: String) -> String {
+    [part1, part2].join(" ")
+}
+
+fn concat_alt(part1: String, part2: String) -> String {
+    part1 + &" ".to_string() + &part2
 }
