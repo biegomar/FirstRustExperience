@@ -1,6 +1,7 @@
 mod behaviour;
 mod collection;
 mod customer;
+mod loops;
 mod person;
 
 use behaviour::SalesDiscount;
@@ -62,6 +63,8 @@ fn main() {
         "{}",
         concat_alt(String::from("Marc"), String::from("Biegota"))
     );
+
+    crate::loops::loops();
 }
 
 fn greetings() {
